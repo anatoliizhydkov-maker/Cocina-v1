@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Calculator Pro</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="app-header">
+        <div class="container">
+            <div class="logo">
+                <h1>🏠 Kitchen Calculator Pro</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-btn active" data-view="modules">
+                    📦 Модули
+                </button>
+                <button class="nav-btn" data-view="projects">
+                    📁 Проекты
+                </button>
+                <button class="nav-btn" data-view="pricelist">
+                    💰 Прайс-лист
+                </button>
+                <button class="nav-btn" data-view="settings">
+                    ⚙️ Настройки
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-main">
+        <div class="container">
+            <!-- VIEW: MODULES -->
+            <div id="view-modules" class="view active">
+                <div class="view-header">
+                    <h2>📦 Библиотека модулей</h2>
+                    <button class="btn btn-primary" id="btn-add-module">
+                        ➕ Добавить модуль
+                    </button>
+                </div>
+
+                <div class="view-filters">
+                    <input type="text" id="search-modules" placeholder="🔍 Поиск модулей..." class="input-search">
+                    <select id="filter-category" class="select-filter">
+                        <option value="">Все категории</option>
+                        <option value="lower">Нижние</option>
+                        <option value="upper">Верхние</option>
+                        <option value="tall">Пеналы</option>
+                        <option value="corner">Угловые</option>
+                    </select>
+                </div>
+
+                <div id="modules-list" class="modules-grid">
+                    <!-- Здесь будут карточки модулей -->
+                </div>
+            </div>
+
+            <!-- VIEW: PROJECTS -->
+            <div id="view-projects" class="view">
+                <div class="view-header">
+                    <h2>📁 Проекты</h2>
+                    <button class="btn btn-primary" id="btn-add-project">
+                        ➕ Новый проект
+                    </button>
+                </div>
+
+                <div id="projects-list" class="projects-grid">
+                    <!-- Здесь будут проекты -->
+                </div>
+            </div>
+
+            <!-- VIEW: PRICELIST -->
+            <div id="view-pricelist" class="view">
+                <div class="view-header">
+                    <h2>💰 Прайс-лист</h2>
+                    <button class="btn btn-primary" id="btn-import-prices">
+                        📥 Импорт
+                    </button>
+                </div>
+
+                <div id="pricelist-content">
+                    <!-- Здесь будет прайс-лист -->
+                </div>
+            </div>
+
+            <!-- VIEW: SETTINGS -->
+            <div id="view-settings" class="view">
+                <div class="view-header">
+                    <h2>⚙️ Настройки</h2>
+                </div>
+
+                <div class="settings-content">
+                    <p>Настройки в разработке...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL CONTAINER -->
+    <div id="modal-container"></div>
+
+    <!-- NOTIFICATION CONTAINER -->
+    <div id="notification-container"></div>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

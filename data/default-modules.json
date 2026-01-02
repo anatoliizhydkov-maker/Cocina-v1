@@ -1,0 +1,230 @@
+[
+  {
+    "id": "module_n1d",
+    "code": "N1D",
+    "name": "Нижний 1 дверь",
+    "category": "lower",
+    "defaultSizes": {
+      "width": 600,
+      "height": 890,
+      "depth": 560
+    },
+    "sizeRanges": {
+      "width": { "min": 300, "max": 1200, "step": 50 },
+      "height": { "min": 700, "max": 950, "step": 10 },
+      "depth": { "min": 300, "max": 600, "step": 10 }
+    },
+    "corpus": {
+      "material": "LDSP",
+      "thickness": 19,
+      "backWall": {
+        "material": "HDF",
+        "thickness": 3
+      }
+    },
+    "details": [
+      {
+        "id": "sidewall",
+        "name": "Боковина",
+        "length": "height",
+        "width": "depth",
+        "quantity": 2,
+        "material": "LDSP",
+        "edging": {
+          "top": 1,
+          "bottom": 1,
+          "left": 1,
+          "right": 0
+        },
+        "edgingType": "PVC_04"
+      },
+      {
+        "id": "bottom",
+        "name": "Дно",
+        "length": "width - (thickness * 2)",
+        "width": "depth",
+        "quantity": 1,
+        "material": "LDSP",
+        "edging": {
+          "top": 1,
+          "bottom": 0,
+          "left": 1,
+          "right": 1
+        },
+        "edgingType": "PVC_04"
+      },
+      {
+        "id": "top_crossbar",
+        "name": "Верх (перемычка)",
+        "length": "width - (thickness * 2)",
+        "width": 100,
+        "quantity": 2,
+        "material": "LDSP",
+        "edging": {
+          "top": 1,
+          "bottom": 1,
+          "left": 1,
+          "right": 1
+        },
+        "edgingType": "PVC_04"
+      },
+      {
+        "id": "shelf",
+        "name": "Полка",
+        "length": "width - (thickness * 2)",
+        "width": "depth",
+        "quantity": 1,
+        "material": "LDSP",
+        "edging": {
+          "top": 1,
+          "bottom": 0,
+          "left": 1,
+          "right": 1
+        },
+        "edgingType": "PVC_04",
+        "optional": true
+      },
+      {
+        "id": "back_wall",
+        "name": "Задняя стенка",
+        "length": "height - 5",
+        "width": "width - 5",
+        "quantity": 1,
+        "material": "HDF",
+        "edging": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        }
+      }
+    ],
+    "facades": [
+      {
+        "id": "door_1",
+        "name": "Фасад (дверь)",
+        "width": "width - 3",
+        "height": "height - 35",
+        "quantity": 1,
+        "type": "door",
+        "material": "MDF",
+        "edging": {
+          "top": 1,
+          "bottom": 1,
+          "left": 1,
+          "right": 1
+        },
+        "edgingType": "PVC_1"
+      }
+    ],
+    "hardware": [
+      {
+        "id": "hinge",
+        "name": "Петля накладная",
+        "article": "BLUM-71T3550",
+        "quantity": 2,
+        "formula": "facades.door.count * 2"
+      },
+      {
+        "id": "shelf_support",
+        "name": "Полкодержатель",
+        "article": "SHELF-SUPP-001",
+        "quantity": 4,
+        "formula": "shelves.count * 4"
+      },
+      {
+        "id": "legs",
+        "name": "Ножка регулируемая",
+        "article": "LEG-ADJ-150",
+        "quantity": 4,
+        "formula": "4"
+      },
+      {
+        "id": "handle",
+        "name": "Ручка",
+        "article": "HANDLE-001",
+        "quantity": 1,
+        "formula": "facades.count",
+        "optional": true
+      }
+    ],
+    "fasteners": [
+      {
+        "id": "confirmat",
+        "name": "Конфирмат 5x70",
+        "article": "CONF-5x70",
+        "quantity": 14
+      },
+      {
+        "id": "dowel",
+        "name": "Шкант 8x40",
+        "article": "DOWEL-8x40",
+        "quantity": 8
+      },
+      {
+        "id": "screw_35x16",
+        "name": "Шуруп 3.5x16",
+        "article": "SCREW-35x16",
+        "quantity": 20
+      }
+    ],
+    "operations": [
+      {
+        "id": "cutting",
+        "name": "Распил ЛДСП",
+        "unit": "рез",
+        "pricePerUnit": 0.5
+      },
+      {
+        "id": "edging",
+        "name": "Кромкование",
+        "unit": "м/п",
+        "pricePerUnit": 1.5
+      },
+      {
+        "id": "assembly",
+        "name": "Сборка модуля",
+        "unit": "шт",
+        "quantity": 1,
+        "pricePerUnit": 15
+      }
+    ],
+    "notes": "Стандартный нижний модуль с одной распашной дверью",
+    "createdAt": "2025-01-02T00:00:00.000Z",
+    "updatedAt": "2025-01-02T00:00:00.000Z"
+  }
+]
+```
+
+---
+
+## 📄 13. .gitignore
+```
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local data
+data/local-*.json
+
+# Build
+dist/
+build/
+
+# Env
+.env
+.env.local
